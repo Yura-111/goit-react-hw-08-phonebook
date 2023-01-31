@@ -31,7 +31,14 @@ export const App = () => {
     }
   }, [darkMode]);
 
-
+  const colorMode = React.useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode(prevMode => (prevMode === 'light' ? 'dark' : 'light'));
+      },
+    }),
+    []
+  );
 
   const theme = React.useMemo(
     () =>
